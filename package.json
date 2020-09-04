@@ -1,9 +1,8 @@
 {
   "name": "google-classroom-share",
   "description": "Classroom Share Button",
-  "author": "Roberto Ribeiro <robertoribeiro.code@gmail.com>",
   "license": "MIT",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": false,
   "engines": {
     "node": ">=8.10.0"
@@ -32,6 +31,22 @@
       "last 1 safari version"
     ]
   },
+  "author": {
+    "name": "Roberto Ribeiro",
+    "email": "robertoribeiro.code@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertov8/google-classroom-share"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "reactjs",
+    "google",
+    "google-classroom-share",
+    "classroom-share"
+  ],
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# google-classroom-share
 
-## Available Scripts
+<img alt="npm" src="https://img.shields.io/npm/v/google-classroom-share?&style=flat-square">
+<img alt="node-current" src="https://img.shields.io/node/v/google-classroom-share?style=flat-square">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/robertov8/google-classroom-share?style=flat-square">
+<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/google-classroom?style=flat-square">
+<img alt="npm" src="https://img.shields.io/npm/dm/google-classroom">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/robertov8/google-classroom">
+<img alt="NPM" src="https://img.shields.io/npm/l/google-classroom">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/robertov8/google-classroom?style=flat-square">
 
-In the project directory, you can run:
+You can add and customize the Classroom share button to meet the needs of your 
+website, such as modifying the button size and load technique. By adding the Classroom
+share button to your website, you allow your users to share your content to their 
+classes and drive traffic to your site.
 
-### `yarn start`
+# Install 
+```
+yarn add google-classroom-share react-load-script
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Demo
+![](./assets/sharebutton.gif)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+# Usage
+```javascript
+import React from 'react';
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+import GoogleShareToClassRoom from '../index';
 
-### `yarn build`
+function App() {
+  return (
+    <GoogleShareToClassRoom
+      body="Example Body"
+      itemType="assignment"
+      url="https://developers.google.com/classroom"
+      size={50}
+      title="Example Title"
+      theme="light"
+      onShare={(type) => console.log(`GoogleShareToClassRoom:${type}`)}
+      onShareComplete={() => console.log('GoogleShareToClassRoom:onShareComplete')}
+      onShareStart={() => console.log('GoogleShareToClassRoom:onShareStart')}
+    />
+  );
+}
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default App;
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Props
+| Prop            |  Type    | Description
+| --------------- | -------- | -----------
+| body            | String   | Sets the item body text to share to Classroom.
+| itemType        | String   | "announcement, assignment, material, question" This will automatically show the creation dialog after the user first selects a course (or immediately if courseid is also specified).
+| url             | String   | Sets the URL to share to Classroom. If you set this attribute by using gapi.sharetoclassroom.render, you should not escape the URL.
+| size            | Number   | Sets the size in pixels of the share button. If the size is omitted, the button uses 32.
+| title           | String   | Sets the item title to share to Classroom.
+| theme           | String   | Sets the button icon for the selected theme.
+| onShare         | String   | If specified, sets the name of a function is called when the share dialog opens and user finishes sharing your link.
+| onShareComplete | Function | If specified, sets the name of a function is called when the user finishes sharing your link.
+| onShareStart    | Function | If specified, sets the name of a function is called when the share dialog opens. 
