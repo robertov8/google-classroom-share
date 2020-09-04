@@ -21,6 +21,7 @@ yarn add google-classroom-share react-load-script
 
 # Demo
 ![](./assets/sharebutton.gif)
+https://developers.google.com/classroom/guides/sharebutton
 
 
 # Usage
