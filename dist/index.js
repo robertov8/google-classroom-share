@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Script from 'react-load-script';
 import Skeleton from 'react-loading-skeleton';
 
-class GoogleShareToClassRoom extends PureComponent {
+class GoogleShareToClassRoom extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,17 +13,25 @@ class GoogleShareToClassRoom extends PureComponent {
   }
 
   componentDidMount() {
+    // eslint-disable-next-line no-underscore-dangle
     window.___gcfg = {
       parsetags: 'explicit'
     };
-    window.onShareComplete = this.props.onShareComplete;
-    window.onShareStart = this.props.onShareStart;
+    const {
+      onShareComplete,
+      onShareStart
+    } = this.props;
+    window.onShareComplete = onShareComplete;
+    window.onShareStart = onShareStart;
   }
 
-  componentWillUpdate(nextProps, nextState, nextContext) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (nextState.scriptLoaded && !nextState.scriptError) {
       window.gapi.sharetoclassroom.go('content');
+      return true;
     }
+
+    return false;
   }
 
   handleScriptCreate() {
@@ -46,6 +54,9 @@ class GoogleShareToClassRoom extends PureComponent {
 
   render() {
     const {
+      scriptLoaded
+    } = this.state;
+    const {
       body,
       itemType,
       size,
@@ -55,10 +66,10 @@ class GoogleShareToClassRoom extends PureComponent {
     } = this.props;
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Script, {
       url: "https://apis.google.com/js/platform.js",
-      onCreate: this.handleScriptCreate,
-      onError: this.handleScriptError,
-      onLoad: this.handleScriptLoad
-    }), !this.state.scriptLoaded && /*#__PURE__*/React.createElement(Skeleton, {
+      onCreate: () => this.handleScriptCreate(),
+      onError: () => this.handleScriptError(),
+      onLoad: () => this.handleScriptLoad()
+    }), !scriptLoaded && /*#__PURE__*/React.createElement(Skeleton, {
       height: size,
       width: size,
       duration: 20

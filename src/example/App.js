@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GoogleShareToClassRoom from './lib/GoogleShareToClassRoom';
+import GoogleShareToClassRoom from '../index';
 
 function App() {
   return (
