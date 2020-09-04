@@ -3,14 +3,14 @@
   "description": "Classroom Share Button",
   "author": "Roberto Ribeiro <robertoribeiro.code@gmail.com>",
   "license": "MIT",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "private": false,
   "engines": {
     "node": ">=8.10.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "distribute": "rm -rf dist && mkdir dist && babel src/index.js -d dist --copy-files"
+    "distribute": "babel src/index.js -o index.js  --compact --minified --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
