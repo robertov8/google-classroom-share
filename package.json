@@ -3,8 +3,11 @@
   "description": "Classroom Share Button",
   "author": "Roberto Ribeiro <robertoribeiro.code@gmail.com>",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
+  "engines": {
+    "node": ">=8.10.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "distribute": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
@@ -30,24 +33,21 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-load-script": "^0.0.6",
     "react-loading-skeleton": "^2.1.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/preset-react": "^7.10.4",
-    "eslint": "^7.8.1",
+    "eslint": "5.16.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0"
+    "eslint-plugin-react-hooks": "^3.0.0"
   }
 }
