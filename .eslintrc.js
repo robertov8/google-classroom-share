@@ -22,5 +22,6 @@ module.exports = {
         'react/jsx-filename-extension': 'off',
         'import/no-named-as-default': 'off',
         'import/no-named-as-default-member': 'off',
+        'react/jsx-no-bind': 'off',
     }
 };

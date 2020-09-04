@@ -17,10 +17,8 @@ class GoogleShareToClassRoom extends Component {
     // eslint-disable-next-line no-underscore-dangle
     window.___gcfg = { parsetags: 'explicit' };
 
-    const { onShareComplete, onShareStart } = this.props;
-
-    window.onShareComplete = onShareComplete;
-    window.onShareStart = onShareStart;
+    window.onShareCompleteInternal = this.onShareCompleteInternal.bind(this);
+    window.onShareStartInternal = this.onShareStartInternal.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -30,6 +28,20 @@ class GoogleShareToClassRoom extends Component {
     }
 
     return false;
+  }
+
+  onShareCompleteInternal() {
+    const { onShare, onShareComplete } = this.props;
+
+    onShare('complete');
+    onShareComplete();
+  }
+
+  onShareStartInternal() {
+    const { onShare, onShareStart } = this.props;
+
+    onShare('start');
+    onShareStart();
   }
 
   handleScriptCreate() {
@@ -54,9 +66,9 @@ class GoogleShareToClassRoom extends Component {
       <div>
         <Script
           url="https://apis.google.com/js/platform.js"
-          onCreate={() => this.handleScriptCreate()}
-          onError={() => this.handleScriptError()}
-          onLoad={() => this.handleScriptLoad()}
+          onCreate={this.handleScriptCreate.bind(this)}
+          onError={this.handleScriptError.bind(this)}
+          onLoad={this.handleScriptLoad.bind(this)}
         />
 
         {!scriptLoaded && (
@@ -71,14 +83,13 @@ class GoogleShareToClassRoom extends Component {
           className="g-sharetoclassroom"
           data-body={body}
           data-itemtype={itemType}
-          data-onsharecomplete="onShareComplete"
-          data-onsharestart="onShareStart"
+          data-onsharecomplete="onShareCompleteInternal"
+          data-onsharestart="onShareStartInternal"
           data-size={size}
           data-theme={theme}
           data-title={title}
           data-url={url}
         />
-
       </div>
     );
   }
@@ -87,6 +98,7 @@ class GoogleShareToClassRoom extends Component {
 GoogleShareToClassRoom.defaultProps = {
   body: null,
   itemType: null,
+  onShare: () => {},
   onShareComplete: () => {},
   onShareStart: () => {},
   size: 32,
@@ -103,6 +115,7 @@ GoogleShareToClassRoom.propTypes = {
     'material',
     'question',
   ]),
+  onShare: PropTypes.func,
   onShareComplete: PropTypes.func,
   onShareStart: PropTypes.func,
   size: PropTypes.number,

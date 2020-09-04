@@ -11,6 +11,7 @@ function App() {
       size={50}
       title="Example Title"
       theme="light"
+      onShare={(type) => console.log(`GoogleShareToClassRoom:${type}`)}
       onShareComplete={() => console.log('GoogleShareToClassRoom:onShareComplete')}
       onShareStart={() => console.log('GoogleShareToClassRoom:onShareStart')}
     />
