@@ -1,13 +1,13 @@
 # google-classroom-share
 
-<img alt="npm" src="https://img.shields.io/npm/v/google-classroom-share?&style=flat-square">
-<img alt="node-current" src="https://img.shields.io/node/v/google-classroom-share?style=flat-square">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/robertov8/google-classroom-share?style=flat-square">
-<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/google-classroom?style=flat-square">
-<img alt="npm" src="https://img.shields.io/npm/dm/google-classroom">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/robertov8/google-classroom">
-<img alt="NPM" src="https://img.shields.io/npm/l/google-classroom">
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/robertov8/google-classroom?style=flat-square">
+<a><img alt="npm" src="https://img.shields.io/npm/v/google-classroom-share?&style=flat-square"></a>
+<a><img alt="node-current" src="https://img.shields.io/node/v/google-classroom-share?style=flat-square"></a>
+<a><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/robertov8/google-classroom-share?style=flat-square"></a>
+<a><img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/google-classroom?style=flat-square"></a>
+<a><img alt="npm" src="https://img.shields.io/npm/dm/google-classroom"></a>
+<a><img alt="GitHub issues" src="https://img.shields.io/github/issues/robertov8/google-classroom"></a>
+<a><img alt="NPM" src="https://img.shields.io/npm/l/google-classroom"></a>
+<a><img alt="GitHub stars" src="https://img.shields.io/github/stars/robertov8/google-classroom?style=flat-square"></a>
 
 You can add and customize the Classroom share button to meet the needs of your 
 website, such as modifying the button size and load technique. By adding the Classroom
