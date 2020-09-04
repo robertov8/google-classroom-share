@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import GoogleShareToClassRoom from './lib/GoogleShareToClassRoom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GoogleShareToClassRoom
+      body="Example Body"
+      itemType="assignment"
+      url="https://developers.google.com/classroom"
+      size={50}
+      title="Example Title"
+      theme="light"
+      onShareComplete={() => console.log('GoogleShareToClassRoom:onShareComplete')}
+      onShareStart={() => console.log('GoogleShareToClassRoom:onShareStart')}
+    />
   );
 }
 
