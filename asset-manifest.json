@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/google-classroom-share/static/css/main.49c119db.chunk.css",
+    "main.js": "/google-classroom-share/static/js/main.8de6f732.chunk.js",
+    "main.js.map": "/google-classroom-share/static/js/main.8de6f732.chunk.js.map",
+    "runtime~main.js": "/google-classroom-share/static/js/runtime~main.01f3bd6f.js",
+    "runtime~main.js.map": "/google-classroom-share/static/js/runtime~main.01f3bd6f.js.map",
+    "static/js/2.acaee8b6.chunk.js": "/google-classroom-share/static/js/2.acaee8b6.chunk.js",
+    "static/js/2.acaee8b6.chunk.js.map": "/google-classroom-share/static/js/2.acaee8b6.chunk.js.map",
+    "index.html": "/google-classroom-share/index.html",
+    "precache-manifest.271977563ae5765a518988e902170456.js": "/google-classroom-share/precache-manifest.271977563ae5765a518988e902170456.js",
+    "service-worker.js": "/google-classroom-share/service-worker.js",
+    "static/css/main.49c119db.chunk.css.map": "/google-classroom-share/static/css/main.49c119db.chunk.css.map"
+  }
+}
