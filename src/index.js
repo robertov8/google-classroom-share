@@ -1,7 +1,38 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Script from 'react-load-script';
+import ObjectHash from 'object-hash';
 import Skeleton from 'react-loading-skeleton';
+
+const propTypes = {
+  body: PropTypes.string,
+  itemType: PropTypes.oneOf([
+    'announcement',
+    'assignment',
+    'material',
+    'question',
+  ]),
+  onShare: PropTypes.func,
+  onShareComplete: PropTypes.func,
+  onShareStart: PropTypes.func,
+  size: PropTypes.number,
+  theme: PropTypes.oneOf(['classic', 'dark', 'light']),
+  title: PropTypes.string,
+  url: PropTypes.string,
+};
+
+const defaultProps = {
+  key: null,
+  body: null,
+  itemType: null,
+  onShare: () => {},
+  onShareComplete: () => {},
+  onShareStart: () => {},
+  size: 32,
+  theme: 'classic',
+  title: null,
+  url: null,
+};
 
 class GoogleShareToClassRoom extends Component {
   constructor(props) {
@@ -62,8 +93,12 @@ class GoogleShareToClassRoom extends Component {
       body, itemType, size, theme, title, url,
     } = this.props;
 
+    const hash = ObjectHash({
+      body, itemType, size, theme, title, url,
+    });
+
     return (
-      <div>
+      <div key={hash}>
         <Script
           url="https://apis.google.com/js/platform.js"
           onCreate={this.handleScriptCreate.bind(this)}
@@ -95,33 +130,8 @@ class GoogleShareToClassRoom extends Component {
   }
 }
 
-GoogleShareToClassRoom.defaultProps = {
-  body: null,
-  itemType: null,
-  onShare: () => {},
-  onShareComplete: () => {},
-  onShareStart: () => {},
-  size: 32,
-  theme: 'classic',
-  title: null,
-  url: null,
-};
+GoogleShareToClassRoom.propTypes = propTypes;
 
-GoogleShareToClassRoom.propTypes = {
-  body: PropTypes.string,
-  itemType: PropTypes.oneOf([
-    'announcement',
-    'assignment',
-    'material',
-    'question',
-  ]),
-  onShare: PropTypes.func,
-  onShareComplete: PropTypes.func,
-  onShareStart: PropTypes.func,
-  size: PropTypes.number,
-  theme: PropTypes.oneOf(['classic', 'dark', 'light']),
-  title: PropTypes.string,
-  url: PropTypes.string,
-};
+GoogleShareToClassRoom.defaultProps = defaultProps;
 
 export default GoogleShareToClassRoom;

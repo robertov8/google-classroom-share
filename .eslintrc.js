@@ -23,5 +23,6 @@ module.exports = {
         'import/no-named-as-default': 'off',
         'import/no-named-as-default-member': 'off',
         'react/jsx-no-bind': 'off',
+        'jsx-a11y/label-has-associated-control': 'off'
     }
 };

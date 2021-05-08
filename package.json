@@ -2,12 +2,15 @@
   "name": "google-classroom-share",
   "description": "Classroom Share Button",
   "license": "MIT",
-  "version": "0.5.2",
+  "version": "0.5.5",
   "private": false,
+  "homepage": "https://robertov8.github.io/google-classroom-share",
   "engines": {
-    "node": ">=8.10.0"
+    "node": ">=10.15.0"
   },
   "scripts": {
+    "build": "react-app-rewired build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "distribute": "babel src/index.js -o index.js  --compact --minified --copy-files"
   },
@@ -48,6 +51,7 @@
     "classroom-share"
   ],
   "dependencies": {
+    "object-hash": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -64,6 +68,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "gh-pages": "^3.1.0",
     "react-app-rewired": "^2.1.6"
   }
 }
