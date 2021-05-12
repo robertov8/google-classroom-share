@@ -2,7 +2,7 @@
   "name": "google-classroom-share",
   "description": "Classroom Share Button",
   "license": "MIT",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "private": false,
   "homepage": "https://robertov8.github.io/google-classroom-share",
   "engines": {
